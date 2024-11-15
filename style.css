@@ -1,0 +1,255 @@
+/* Font Family
+================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+
+/* Global Styles
+================================================== */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  background-color: #0a0a0c;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.025rem;
+  line-height: 1.618;
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+/* Style for search bar */
+.search-bar {
+  margin: 20px 0;
+  text-align: center;
+}
+
+#searchInput {
+  padding: 12px 20px;
+  font-size: 16px;
+  width: 100%;
+  border: 2px solid #8b5cf6;
+  border-radius: 12px;
+  background-color: #1a1a1f;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #a78bfa;
+  outline: none;
+  background-color: #242429;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+}
+
+/* Setup
+================================================== */
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 800px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Typography / Links
+================================================== */
+p {
+  color: #e5e5e5;
+  display: block;
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 0 8px;
+}
+
+a, a:visited {
+  color: #a78bfa;
+  outline: 0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover, a:focus {
+  color: #c4b5fd;
+  text-decoration: none;
+}
+
+/* Audio Player Styles
+================================================== */
+#audiowrap,
+#plwrap {
+  margin: 0 auto;
+  background: #13131a;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+#tracks {
+  position: relative;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#nowPlay {
+  background: #1a1a1f;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+#nowPlay span {
+  display: inline-block;
+  font-size: 1.1rem;
+  vertical-align: top;
+}
+
+#nowPlay span#npAction {
+  color: #8b5cf6;
+  font-weight: 600;
+  padding: 21px;
+  width: 30%;
+}
+
+#nowPlay span#npTitle {
+  padding: 21px;
+  text-align: right;
+  width: 70%;
+  color: #ffffff;
+}
+
+#plList li {
+  cursor: pointer;
+  display: block;
+  margin: 0;
+  padding: 15px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+#plList li:hover {
+  background-color: #1a1a1f;
+  transform: translateX(5px);
+}
+
+.plItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.plTitle {
+  flex: 1;
+  margin: 0 15px;
+  color: #e5e5e5;
+}
+
+.plNum {
+  color: #8b5cf6;
+  font-weight: 600;
+  width: 30px;
+}
+
+.plLength {
+  color: #8b5cf6;
+  padding-left: 21px;
+}
+
+.plSel,
+.plSel:hover {
+  background-color: #2a2a35 !important;
+  color: #ffffff;
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.2);
+}
+
+#tracks a {
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2.3rem;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  margin: 0 10px;
+  padding: 0;
+  text-align: center;
+  background: #8b5cf6;
+  transition: all 0.3s ease;
+}
+
+#tracks a:hover,
+#tracks a:active {
+  background-color: #a78bfa;
+  transform: scale(1.1);
+}
+
+/* Plyr Overrides
+================================================== */
+.plyr--audio .plyr__controls {
+  background-color: #1a1a1f;
+  border: none;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.plyr--audio .plyr__control {
+  background: transparent;
+  color: #8b5cf6;
+}
+
+.plyr--audio .plyr__control:hover {
+  background-color: rgba(139, 92, 246, 0.1);
+}
+
+.plyr--audio .plyr__progress--played,
+.plyr--audio .plyr__volume--display {
+  color: #8b5cf6;
+}
+
+.plyr--audio .plyr__progress--buffer,
+.plyr--audio .plyr__volume--display {
+  background-color: rgba(139, 92, 246, 0.3);
+}
+
+.plyr--audio .plyr__progress--buffer {
+  color: rgba(139, 92, 246, 0.5);
+}
+
+.plyr__controls .plyr__controls__item.plyr__time {
+  font-size: 14px;
+  color: #a78bfa;
+  font-weight: 500;
+}
+
+/* Media Queries
+================================================== */
+@media only screen and (max-width: 600px) {
+  #nowPlay span#npAction {
+    display: none;
+  }
+  
+  #nowPlay span#npTitle {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  #tracks a {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 1.8rem;
+  }
+}
